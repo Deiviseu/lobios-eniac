@@ -1,54 +1,22 @@
-# Remotion video
+# Vídeo de apresentação do Lobios
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Vídeo animado (Remotion, 1920x1080, ~2min35s) que apresenta o sistema completo:
+abertura, os três perfis, login e um passeio pelas telas de RH, Gestor e Colaborador,
+terminando com o diagrama de como os perfis se conectam.
 
-Welcome to your Remotion project!
-
-## Commands
-
-**Install Dependencies**
+## Comandos
 
 ```console
-npm i --loglevel=error
+npm i                                              # instalar dependências
+npm run dev                                        # abrir o Remotion Studio para editar e pré-visualizar
+npx remotion render LobiosTour out/lobios-tour.mp4 # renderizar o MP4
 ```
 
-**Start Preview**
+## Onde mudar
 
-```console
-npm run dev
-```
+- `src/data.ts`: textos das legendas, ordem das telas e a área destacada (`foco`) de cada uma.
+- `public/screens/`: prints do sistema (1920x1080). Para atualizar, troque o arquivo mantendo o nome.
+- `src/scenes/`: cada cena do vídeo (abertura, perfis, login, título do perfil, passeio, diagrama e final).
+- `src/theme.ts`: cores e fonte (Inter, guardada em `public/fonts`).
 
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Licença do Remotion: gratuita para equipes de até 3 pessoas (https://www.remotion.dev/license).
