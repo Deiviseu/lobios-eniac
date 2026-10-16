@@ -100,7 +100,7 @@ export const perfis: Perfil[] = [
       {
         imagem: "gestor-avaliacoes.png",
         menu: 2,
-        foco: [292, 136, 520, 640],
+        foco: [292, 136, 1596, 640],
         titulo: "Avaliações de desempenho",
         texto:
           "Escolha a pessoa, o método e o período e dê uma nota de 0 a 10. Os critérios definidos pelo RH aparecem como guia.",
@@ -108,7 +108,7 @@ export const perfis: Perfil[] = [
       {
         imagem: "gestor-feedbacks.png",
         menu: 3,
-        foco: [292, 136, 520, 440],
+        foco: [292, 136, 1596, 440],
         titulo: "Feedbacks",
         texto:
           "Elogios e pontos de melhoria enviados direto para a área do colaborador.",
@@ -116,7 +116,7 @@ export const perfis: Perfil[] = [
       {
         imagem: "gestor-metas.png",
         menu: 4,
-        foco: [292, 136, 520, 490],
+        foco: [292, 136, 1596, 490],
         titulo: "Metas da equipe",
         texto:
           "Crie metas com título, descrição e prazo para cada pessoa e acompanhe o andamento de todas.",
@@ -139,7 +139,7 @@ export const perfis: Perfil[] = [
       {
         imagem: "funcionario.png",
         menu: 0,
-        foco: [292, 136, 1596, 210],
+        foco: [292, 136, 1596, 290],
         titulo: "Painel",
         texto:
           "Ao entrar, o colaborador vê um resumo das metas, das férias, do último feedback e do plano de carreira.",
@@ -147,7 +147,7 @@ export const perfis: Perfil[] = [
       {
         imagem: "funcionario-metas.png",
         menu: 1,
-        foco: [292, 136, 1596, 180],
+        foco: [292, 136, 1596, 306],
         titulo: "Minhas metas",
         texto:
           "As metas criadas pelo gestor aparecem aqui, e o colaborador atualiza o status conforme avança.",
@@ -163,7 +163,7 @@ export const perfis: Perfil[] = [
       {
         imagem: "funcionario-desempenho.png",
         menu: 3,
-        foco: [292, 136, 1596, 230],
+        foco: [292, 136, 1596, 400],
         titulo: "Avaliações e feedbacks",
         texto:
           "Tudo o que o gestor registrou: notas por período e método, comentários e feedbacks recebidos.",
@@ -182,7 +182,7 @@ export const perfis: Perfil[] = [
         foco: [292, 136, 1190, 700],
         titulo: "Treinamentos",
         texto:
-          "Progresso de cada curso, recomendações geradas a partir das avaliações e o catálogo completo de cursos.",
+          "Progresso de cada curso e recomendações automáticas: a nota 5,5 em competências fez o sistema sugerir Liderança de Equipes.",
       },
       {
         imagem: "funcionario-ponto.png",
