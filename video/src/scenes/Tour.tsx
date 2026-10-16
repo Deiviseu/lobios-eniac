@@ -1,7 +1,9 @@
+import React from "react";
 import { AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { Cursor } from "../components/Cursor";
 import { Fundo } from "../components/Fundo";
 import { Legenda } from "../components/Legenda";
+import { Clique, WhooshSuave } from "../components/Sons";
 import { camera, Destaque, ESCALA, Palco } from "../components/Palco";
 import { Perfil, Tela } from "../data";
 
@@ -67,6 +69,12 @@ export const Tour: React.FC<{ perfil: Perfil }> = ({ perfil }) => {
         entrada={i * D + 40}
         saida={i * D + D - 22}
       />
+      {perfil.telas.map((t, k) => (
+        <React.Fragment key={t.imagem}>
+          <Clique em={k * D + 16} />
+          <WhooshSuave em={k * D + 28} />
+        </React.Fragment>
+      ))}
     </AbsoluteFill>
   );
 };

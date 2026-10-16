@@ -2,6 +2,7 @@ import { AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame } f
 import { Cursor } from "../components/Cursor";
 import { Fundo } from "../components/Fundo";
 import { Legenda } from "../components/Legenda";
+import { Clique, Digitacao, Ding, WhooshSuave } from "../components/Sons";
 import { camera, ESCALA, Palco } from "../components/Palco";
 import { fontFamily } from "../theme";
 
@@ -74,6 +75,13 @@ export const Login: React.FC = () => {
         entrada={40}
         saida={DURACAO_LOGIN - 24}
       />
+      <WhooshSuave em={16} />
+      <Clique em={50} />
+      <Digitacao em={56} duracao={40} />
+      <Clique em={100} />
+      <Digitacao em={104} duracao={20} inicio={45} />
+      <Clique em={144} />
+      <Ding em={152} />
     </AbsoluteFill>
   );
 };

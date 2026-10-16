@@ -1,5 +1,6 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { Fundo } from "../components/Fundo";
+import { Ding } from "../components/Sons";
 import { Logo } from "../components/Logo";
 import { cor, fontFamily } from "../theme";
 
@@ -83,6 +84,7 @@ export const Abertura: React.FC = () => {
           num só lugar, para colaboradores, gestores e RH
         </div>
       </div>
+      <Ding em={24} />
     </AbsoluteFill>
   );
 };

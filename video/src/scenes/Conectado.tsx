@@ -1,5 +1,6 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { Fundo } from "../components/Fundo";
+import { Ding } from "../components/Sons";
 import { cor, fontFamily } from "../theme";
 
 export const DURACAO_CONECTADO = 220;
@@ -123,6 +124,7 @@ export const Conectado: React.FC = () => {
           </div>
         );
       })}
+      <Ding em={138} />
     </AbsoluteFill>
   );
 };

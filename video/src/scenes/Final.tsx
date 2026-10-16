@@ -1,5 +1,6 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { Fundo } from "../components/Fundo";
+import { Ding } from "../components/Sons";
 import { Logo } from "../components/Logo";
 import { cor, fontFamily } from "../theme";
 
@@ -47,6 +48,7 @@ export const Final: React.FC = () => {
       <div style={{ position: "relative", fontSize: 28, color: "rgba(221,214,254,0.8)", marginTop: 44, opacity: interpolate(frame, [70, 90], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
         Desafio proposto pela Lobios · Programa de projetos ENIAC
       </div>
+      <Ding em={12} />
     </AbsoluteFill>
   );
 };

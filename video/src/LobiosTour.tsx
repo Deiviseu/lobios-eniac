@@ -2,6 +2,8 @@ import { linearTiming, TransitionSeries } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
 import React from "react";
+import { AbsoluteFill, Audio, interpolate, staticFile } from "remotion";
+import { Whoosh } from "./components/Sons";
 import { perfis } from "./data";
 import { Abertura } from "./scenes/Abertura";
 import { Conectado, DURACAO_CONECTADO } from "./scenes/Conectado";
@@ -21,27 +23,55 @@ const cenas = [
   { id: "perfis", duracao: DURACAO_PERFIS, el: <Perfis /> },
   { id: "login", duracao: DURACAO_LOGIN, el: <Login /> },
   ...perfis.flatMap((p) => [
-    { id: "titulo-" + p.id, duracao: DURACAO_TITULO, el: <TituloPerfil perfil={p} /> },
+    {
+      id: "titulo-" + p.id,
+      duracao: DURACAO_TITULO,
+      el: <TituloPerfil perfil={p} />,
+    },
     { id: "tour-" + p.id, duracao: duracaoTour(p), el: <Tour perfil={p} /> },
   ]),
   { id: "conectado", duracao: DURACAO_CONECTADO, el: <Conectado /> },
   { id: "final", duracao: DURACAO_FINAL, el: <Final /> },
 ];
 
-export const DURACAO_TOTAL = cenas.reduce((s, c) => s + c.duracao, 0) - TRANSICAO * (cenas.length - 1);
+export const DURACAO_TOTAL =
+  cenas.reduce((s, c) => s + c.duracao, 0) - TRANSICAO * (cenas.length - 1);
+
+// Música de fundo (áudio do vídeo enviado), com entrada e saída suaves.
+const volumeMusica = (f: number) =>
+  0.32 *
+  interpolate(
+    f,
+    [0, 45, DURACAO_TOTAL - 120, DURACAO_TOTAL - 5],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
 export const LobiosTour: React.FC = () => (
-  <TransitionSeries>
-    {cenas.map((c, k) => (
-      <React.Fragment key={c.id}>
-        {k > 0 && (
-          <TransitionSeries.Transition
-            presentation={c.id.startsWith("tour-") ? slide({ direction: "from-right" }) : fade()}
-            timing={linearTiming({ durationInFrames: TRANSICAO })}
-          />
-        )}
-        <TransitionSeries.Sequence durationInFrames={c.duracao}>{c.el}</TransitionSeries.Sequence>
-      </React.Fragment>
-    ))}
-  </TransitionSeries>
+  <AbsoluteFill>
+    <Audio src={staticFile("audio/musica.m4a")} volume={volumeMusica} />
+    <TransitionSeries>
+      {cenas.map((c, k) => (
+        <React.Fragment key={c.id}>
+          {k > 0 && (
+            <TransitionSeries.Transition
+              presentation={
+                c.id.startsWith("tour-")
+                  ? slide({ direction: "from-right" })
+                  : fade()
+              }
+              timing={linearTiming({ durationInFrames: TRANSICAO })}
+            />
+          )}
+          <TransitionSeries.Sequence durationInFrames={c.duracao}>
+            {c.el}
+            {k > 0 && <Whoosh em={0} />}
+          </TransitionSeries.Sequence>
+        </React.Fragment>
+      ))}
+    </TransitionSeries>
+  </AbsoluteFill>
 );
