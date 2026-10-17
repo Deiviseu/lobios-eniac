@@ -313,8 +313,8 @@ Depois, abra um **Pull Request** para a `main` no GitHub e apague a branch após
 |---|---|
 | **Davi** | Coordenação técnica, banco de dados e infraestrutura |
 | **Jackson** | API (FastAPI) |
-| *Adicionar* | Front-end |
-| *Adicionar* | *Adicionar* |
+| **Samuel** | Front-end |
+| **Tarcio** | Front-end |
 
 **Proponente:** Aline Lopes Ruiz · Gerente Administrativa · Lobios
 
