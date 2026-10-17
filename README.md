@@ -318,24 +318,6 @@ Depois, abra um **Pull Request** para a `main` no GitHub e apague a branch após
 
 **Proponente:** Aline Lopes Ruiz · Gerente Administrativa · Lobios
 
----
-
-## 🗺️ Roadmap
-
-- [x] Banco relacional no Supabase com RLS e trigger de sincronização
-- [x] API com CRUD completo e documentação no Swagger
-- [x] Front-end Angular com os três perfis
-- [x] Ponte de autenticação Supabase → Firebase
-- [x] Treinamentos e ponto no Firestore
-- [x] Troca de senha e primeiro acesso
-- [ ] Recuperação de senha por e-mail ("Esqueci minha senha")
-- [ ] Upload dos arquivos anexados ao ponto
-- [ ] API devolver perfil, setor, cargo e gestor no `GET /users`
-- [ ] Testes automatizados e aprovação pela GQA
-- [ ] Apresentação final e pitch na Proj Week
-
----
-
 <div align="center">
 
 Feito com 💙 pela equipe Lobios · ENIAC 2026
